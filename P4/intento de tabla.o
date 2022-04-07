@@ -1,0 +1,37 @@
+.ORG 00h 10h
+21h 96h 11h 
+36h 12h 
+21h 97h 11h 
+36h 00h 
+21h 98h 11h 
+36h 01h 
+3Ah 98h 11h 
+21h 96h 19h 
+77h 
+21h 99h 11h 
+36h 09h 
+21h 97h 11h 
+34h 
+6Eh 
+36h 00h 
+0Eh 00h 
+3Ah 96h 19h 
+0Fh 
+32h 96h 19h 
+3Ah 99h 19h 
+D2h 37h 10h 
+21h 97h 19h 
+6Eh 
+86h 
+77h 
+07h 
+32h 99h 19h 
+0Ch 
+79h 
+FEh 04h 
+C2h 24h 10h 
+21h 98h 19h 
+7Eh 
+FEh 0Ah 
+C2h 0Fh 10h 
+76h 

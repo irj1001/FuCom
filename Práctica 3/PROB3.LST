@@ -1,0 +1,39 @@
+  Wed Mar 13 2019 11:33                                                                                                  Page    1
+
+
+
+
+
+
+
+               2500 A.D. 8085 Macro Assembler  -  Version 4.03b
+               ------------------------------------------------
+
+                       Input  Filename : PROB3.ASM
+                       Output Filename : PROB3.obj
+
+
+    1                         	;Autor:Irene Ruiz y Alex Tomé
+    2                         	;Programa que suma 2 numeros almacenados previamente en las posiciones de memoria 1200 y 1201, y gua
+                                rda el resultado en la 1203.
+    3                         	;Pruebas: 3+5,9+5,5+5,27+5,2C+5
+    4  1000                   		ORG 1000H	;Cargar desde la dirección 1000H
+    5  1000   21 00 12        		LXI H,1200H
+    6  1003   36 03           		MVI M,3
+    7  1005   7E              		MOV A,M 	;Mover el dato al acumulador
+    8  1006   21 01 12        		LXI H,1201H
+    9  1009   36 05           		MVI M,5
+   10  100B   46              		MOV B,M 	;Mover el dato al registro B
+   11  100C   80              		ADD B 		;Suma el registro B al acumulador
+   12  100D   27              		DAA		;Ajuste en BCD del resultado
+   13  100E   21 02 12        		LXI H,1202H
+   14  1011   77              		MOV M,A		;Mover el dato del acumulador a la memoria
+   15  1012   CF              		RST 1		;Devuelve el control
+   16  1013                   		END		;Fin de código
+
+
+
+           Lines Assembled :  16             Assembly Errors :  0
+
+
+

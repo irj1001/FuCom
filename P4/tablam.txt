@@ -1,0 +1,25 @@
+;Autor:Irene Ruiz y Alex Tomé
+;Fecha:23/04/19
+;Descripción: Programa que hace la tabla de multiplicar de un número guardado en la posición
+;de memoria 1200H y guarda los resultados en hexadecimal en las posiciones siguientes.
+;C es el contador, D almacena las sumas parciales.
+
+	ORG 1000H
+	LXI H,1200H
+	MVI M,3		;Movemos el número a memoria
+	MOV B,M		;Movemos el número a B
+	MVI C,0
+	MVI D,0
+	LXI H,1201H
+SUMA:	MOV A,D		;Movemos la suma parcial al acumulador
+	ADD B		;Sumamos el número
+	MOV D,A		;Devolvemos la suma a D
+	MOV M,D		;Movemos el resultado a memoria
+	INX H		;Incrementamos la dirección de memoria
+	INR C		;incrementamos el contador
+	MOV A,C		;Movemos el contador al acumulador
+	CPI 10		;Comparamos con 10
+	JZ FIN		;Si es 10, vamos al fin
+	JMP SUMA	;Si no, volvemos al bucle
+FIN:	RST 1
+	END
